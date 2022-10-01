@@ -47,42 +47,24 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Markdown(
                 data: textController.text,
                 styleSheet: MarkdownStyleSheet(
-                  h1: TextStyle(fontWeight: FontWeight.bold),
+                  h1: const TextStyle(fontWeight: FontWeight.bold),
                 ),
               ),
             ),
           ],
         ),
       ),
-      floatingActionButton: Row(
-        mainAxisAlignment: MainAxisAlignment.end,
-        children: [
-          FloatingActionButton(
-            tooltip: 'Copy',
-            onPressed: textController.text != ""
-                ? () {
-                    Clipboard.setData(ClipboardData(text: textController.text));
-                  }
-                : null,
-            backgroundColor: textController.text != ""
-                ? ThemeData.dark().primaryColor
-                : ThemeData.dark().backgroundColor,
-            child: const Icon(Icons.copy),
-          ),
-          const SizedBox(width: 10),
-          FloatingActionButton(
-            tooltip: 'Download',
-            onPressed: textController.text != ""
-                ? () {
-                    Clipboard.setData(ClipboardData(text: textController.text));
-                  }
-                : null,
-            backgroundColor: textController.text != ""
-                ? ThemeData.dark().primaryColor
-                : ThemeData.dark().backgroundColor,
-            child: const Icon(Icons.download),
-          ),
-        ],
+      floatingActionButton: FloatingActionButton(
+        tooltip: 'Copy',
+        onPressed: textController.text != ""
+            ? () {
+                Clipboard.setData(ClipboardData(text: textController.text));
+              }
+            : null,
+        backgroundColor: textController.text != ""
+            ? ThemeData.dark().primaryColor
+            : ThemeData.dark().backgroundColor,
+        child: const Icon(Icons.copy),
       ),
     );
   }

@@ -49,6 +49,11 @@ dev_dependencies:
   flutter_lints: ^2.0.0
   msix: ^3.6.2
 
+msix_config:
+  display_name: RunMD
+  publisher_display_name: JhonDev
+  msix_version: 1.0.0.0
+  logo_path: D:\Media\Documents\Programming\Flutter\markdown_editor\windows\runner\resources\app_icon.ico
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
